@@ -1,0 +1,25 @@
+<?php
+class MyHelper extends AppHelper {
+  public $helpers = array('Html');
+
+  public function test(){
+        return 'http://cakephp.jp/';                                                                                
+  }
+  
+  public function sidebar(){
+    $ret ="";
+
+    $li_signup =
+                '<li>'. 
+                    $this->Html->link( __('サインアップ'), array('controller' => 'Users', 'action' => 'signup')).
+                '</li>';
+    $li_login = '<li>'. 
+                    $this->Html->link( __('ログイン'), array('controller' => 'Users', 'action' => 'login')).
+                '</li>';
+    $ret =  '<ul>'.$li_signup.$li_login '</ul>';
+    debug($ret);
+    exit;
+
+    return '<ul>'.$li_signup.$li_login '</ul>';
+  }
+}

@@ -1,0 +1,27 @@
+div.tag{
+  border: medium solid pink;
+/*
+  float:left;
+  width:300px;
+*/
+}
+div.note{
+  border: medium solid green;
+/*
+  float:left;
+  width:300px;             
+*/
+}
+
+div.bookmark{
+  border: medium solid lime;
+
+}
+
+div.bookmark-tag{
+  border: medium solid blue;
+}
+
+div.nav{
+  border: medium solid yellow;
+}
