@@ -12,11 +12,7 @@
     echo $this->Html->link( 'ブックマーク登録',  array('controller' => 'Bookmarks', 'action' => 'add'));
     ?>
   </li>
-  <li>
-    <?php 
-    echo $this->Html->link( 'ブックマーク登録[ajax]',  array('controller' => 'Bookmarks', 'action' => 'add_ajax'));
-    ?>
-  </li>
+
   
   <li>
     <?php

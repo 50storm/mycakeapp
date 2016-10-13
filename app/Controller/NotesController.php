@@ -27,6 +27,23 @@ class NotesController extends AppController{
     //   );
 
   }
+  public function delete($id){
+    if ($this->request->is('post') || $this->request->is('put')) {
+      if($this->Note->delete($id)){
+         $this->Flash->success(__('ノートを削除しました。'));
+               
+            return $this->redirect(
+                              array('controller' => 'Mypages', 'action' => 'index')
+             );
+      }
+    } else{
+           return $this->redirect(
+                              array('controller' => 'Mypages', 'action' => 'index')
+             );
+     
+    }
+     
+  }
 
   public function view($id = null){
 
@@ -77,10 +94,10 @@ Vこのメソッドはデータを保存するためにモデルの状態をリ�
              $this->request->data['Note']['user_id'] =$this->Auth->user('id');
             
             if ($this->Note->save($this->request->data)) {
-                $this->Flash->success(__('The Note has been saved'));
-                return $this->redirect(array('action' => 'index'));
-
-
+                $this->Flash->success(__('ノートを登録しました。'));
+                 return $this->redirect(
+                    array('controller' => 'Mypages', 'action' => 'index')
+                  );
 
             }else{
                 $this->Flash->error(

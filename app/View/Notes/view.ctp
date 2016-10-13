@@ -18,14 +18,19 @@
         	<dd><?php echo nl2br(h($Note['Note']['body']));?></dd>
         </dl>
     </fieldset>
+<div>
+
 <?php 
-echo $this->Html->link( 'Note編集',    
+  echo $this->Html->link( 'Note編集',    
         array('controller' => 'Notes', 
               'action' => 'edit',
               $Note['Note']['id'])
         );
-
 ?>
+<?php 
+  echo $this->Form->postlink(__('ノート削除'),array('controller'=>'Notes' ,'action'=>'delete',$Note['Note']['id']),array('confirm'=> '本当に削除しますか？')); 
+?>
+d</div>
 </div>
 <?php //下側 ?>
 <div class="nav">
