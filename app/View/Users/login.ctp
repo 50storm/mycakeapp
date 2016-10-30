@@ -30,5 +30,12 @@
 </ul>
 -->
 <?php echo $this->My->sidebar();?>
-<?php echo $this->Html->link( __('*パスワード忘れた'), array('controller' => 'Users', 'action' => 'reset')); ?>
+<?php 
+echo $this->Html->link( __('*パスワード忘れた'), array('controller' => 'Users', 'action' => 'reset')); 
+?>
+<br/>
+
+<?php
+echo $this->Html->link( __('test'), array('controller' => 'Users', 'action' => 'test')); 
+?>
 </div>

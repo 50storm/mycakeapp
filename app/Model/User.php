@@ -14,6 +14,8 @@ class User extends AppModel{
     // public $virtualFields = array(
     // '       password' => 'password2'
     // );
+
+    public $useTable='users';
  
     public $validate = array(
         'username' => array(

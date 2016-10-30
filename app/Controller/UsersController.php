@@ -24,9 +24,30 @@ class UsersController extends AppController{
   public function beforeFilter() {
      parent::beforeFilter();
      parent::beforeFilter();
-     $this->Auth->allow('login','add','activate','signup','reset','restpassword');
+     $this->Auth->allow('login','add','activate','signup','reset','restpassword','test');
   }
-    
+  
+  private function __addRow(){
+      //Hiddenにセットしておく
+    if(isset($this->request->data['Table']['count'])){
+      $count = $this->request->data['Table']['count'];
+
+      for($i=0; $i<$count+1 ; $i++){
+        $this->request->data['User'][$i]['email']=
+        (isset($this->request->data['User'][$i]['email']))? $this->request->data['User'][$i]['email'] : '';
+        $this->request->data['User'][$i]['username']=
+        (isset($this->request->data['User'][$i]['username']))? $this->request->data['User'][$i]['username'] : '';
+      }
+    }
+       
+  }
+
+  public function test(){
+
+    $this->__addRow();
+
+
+  }
   public function login(){
      
     if($this->request->is('post')){
